@@ -1,0 +1,96 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    height:100vh;
+    overflow: hidden;
+    position: relative;
+
+    
+}
+
+.circle{
+       overflow: hidden;  
+        padding-top: 550px;
+        position: absolute;
+         border-radius:50%;
+         right: -50px;
+         width: 750px;
+         left: 70%;
+         background: rgb(181, 116, 241); 
+         height: 320px; 
+          
+         top: -110px;
+         
+}
+.semicircle1{
+    overflow: hidden;
+    background: rgb(181, 116, 241);
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 800px;
+    top: -230px;
+    
+}
+.semicircle2{
+     overflow: hidden;
+    background: rgb(181, 116, 241);
+    width: 450px;
+    height: 400px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 900px;
+    bottom: -220px;
+}
+
+.header{
+    padding-top: 30px;
+    padding-left: 550px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+}
+
+.login{
+    margin-top: 190px;
+    margin-left: 500px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+h2{
+    color:  rgb(154, 73, 231); 
+    font-size:45px;
+    
+}
+.input{
+    margin-top: 5px;
+    padding: 5px 5px;
+    border-top: none;
+    border-left: none;
+    border-radius: 3px;
+    border-color: none;
+    box-shadow:2px 2px rgba(18, 17, 17, 0.5) ;
+    outline: none;
+    border: none;
+    width: 190px;
+    height: 30px;
+    font-size: large;
+}
+
+.logbtn{
+  
+    background-color:  rgb(154, 73, 231); 
+    margin-top: 30px;
+    color: white;
+    border: none;
+    width: 90px;
+    height: 40px;
+    border-radius: 3px;
+    margin-left: 55px;
+}
+.logbtn:hover{
+    border: 2px solid rgb(181, 116, 241);
+}
+

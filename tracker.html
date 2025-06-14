@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+    <div class="tracker">Expense Tracker</div>
+    <div class="inputform">
+    <input type="date" class="input" placeholder="Date">
+    <input type="number" class="input" placeholder="Amount">
+    <select name="Transaction" class="input" placeholder="Transaction">
+        <option selected>Transaction</option>
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+    </select>
+    
+   </div>
+      <center> <div class="fillout"></div></center>
+     
+        <img class="add" onclick="inputValues()" src=https://img.icons8.com/ios11/512/7950F2/plus.png alt="image">
+    
+    <div class="card">
+     <div class="childcard">
+        <center>
+        <h3>Total Income</h3>
+        <h3 id="income">0</h3>
+        </center>
+        </div>
+          <div class="childcard">
+        <center>
+        <h3>Total Expenses</h3>
+        <h3 id="expense">0</h3>
+        
+        </center>
+    </div>
+        <div class="childcard">
+        <center>
+        <h3>Balance</h3>
+        <h3 id="balance">0</h3>
+        </center>
+        </div>
+        
+    </div>
+    <center>
+    <div>
+        <br>
+        <table id="table">
+        <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Amount</th>
+            <th>Action</th>
+            
+        </tr>
+        <tbody>
+        <tr>
+            
+        </tr>
+        </tbody>
+
+    </table>
+    </center>
+    
+    </div>
+</div>
+<script>
+    let table=document.getElementById('table')
+    console.log(table)
+    const onclick="removeRow()", imageURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-1IHJrrSs4fUzyxV558iaZw7HT8h_CD_pnbLfrl8fWeWBtMBQBP0ThgG8YpsLjdzM-0&usqp=CAU"
+     const img=new Image()
+      img.src=imageURL
+      //let image=document.body.appendChild(img)
+
+        function inputValues(){
+        let date=document.getElementsByClassName("input")[0].value
+        let amount=document.getElementsByClassName("input")[1].value
+        let transaction=document.getElementsByClassName("input")[2].value
+        console.log("retrieved:",date,amount,transaction)
+        let fill=document.querySelector(".fillout")
+        if (!date || !amount || !transaction){
+            fill.innerHTML='Please fill out all fields!'
+             return 
+        }
+        if(fill){
+          fill.innerHTML=''
+        }
+        
+        let tablebody=document.querySelector("tbody")
+        if (!tablebody){
+            alert("Table body not found")
+        
+        }
+        let newRow=document.createElement("tr")
+        newRow.innerHTML=`
+        <td>${date}</td>
+        <td>${amount}</td>
+        <td>${transaction}</td>
+        <td><img src="${imageURL}" alt="image"></td>`
+        //append new row to table body
+        tablebody.appendChild(newRow)
+         
+        let delrow=newRow.querySelector("img")
+        delrow.addEventListener("click",
+        function(){
+            removeRow(this)
+        })
+        //find the clicked <img> and remove it
+        function removeRow(imgElement){
+            const row =imgElement.closest("tr")
+            if(row){
+                row.remove()
+            }
+        }
+
+        //adding income, expense and balance
+        let income=document.getElementById("income").innerText
+        let expense=document.getElementById("expense").innerText
+        let balance=document.getElementById("balance").innerText
+        
+        if(transaction=='Income')
+        {
+          if(income=='0') 
+          {
+               document.getElementById("income").innerText=amount
+          } 
+          else
+          {
+           
+            document.getElementById("income").innerText= parseInt(income)+parseInt(amount)
+          }
+          if(balance=='0'){
+            document.getElementById('balance').innerText=amount
+          }
+          else{
+            document.getElementById('balance').innerText=parseInt(income)+parseInt(amount)
+          }
+        } 
+    
+        if(transaction=="Expense")
+        {
+              if(expense=='0'){
+                document.getElementById("expense").innerText=amount
+              }
+              else{
+                document.getElementById("expense").innerText=parseInt(expense)+parseInt(amount)
+              }
+              if(balance=='0'){
+                document.getElementById('balance').innerText=amount
+              }
+              else{
+                document.getElementById('balance').innerHTML=parseInt(balance)-parseInt(amount)
+              }
+        }
+       
+    } 
+   
+</script>
+</body>
+</html>
