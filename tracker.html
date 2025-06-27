@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+    <div class="tracker">Expense Tracker</div>
+    <div class="inputform">
+    <input type="date" class="input" placeholder="Date">
+    <input type="number" class="input" placeholder="Amount">
+    <select name="Transaction" class="input" placeholder="Transaction">
+        <option selected>Transaction</option>
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+    </select>
+    
+   </div>
+      <center> <div class="fillout"></div>
+        <h1 class="add" onclick="inputValues()"> + </h1> 
+    
+    <div class="card">
+     <div class="childcard">
+        <center>
+        <h3>Total Income</h3>
+        <h3 id="income">0</h3>
+        </center>
+        </div>
+          <div class="childcard">
+        <center>
+        <h3>Total Expenses</h3>
+        <h3 id="expense">0</h3>
+        
+        </center>
+    </div>
+        <div class="childcard">
+        <center>
+        <h3>Balance</h3>
+        <h3 id="balance">0</h3>
+        </center>
+        </div>
+        
+    </div>
+    <center>
+    <div>
+        <br>
+        <table id="table">
+        <tr>
+            <th>Date</th>
+             <th>Amount</th>
+             <th>Transaction</th>
+            <th>Action</th>
+            
+        </tr>
+        <tbody>
+        <tr>
+            
+        </tr>
+        </tbody>
+
+    </table>
+    </center>
+    
+    </div>
+</div>
+<script src="script.js">
+   
+   
+</script>
+</body>
+</html>
